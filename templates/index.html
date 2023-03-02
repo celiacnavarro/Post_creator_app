@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Introduzca prompt</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+      $(document).ready(function() {
+        $('form').submit(function(event) {
+          event.preventDefault();
+          $.post('/', $(this).serialize(), function(response) {
+            $('#output').text(response.output);
+          }, 'json');
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Introduzca prompt</h1>
+      <form>
+        <label for="input">Introduzca su prompt:</label>
+        <input type="text" id="input" name="input" placeholder="Ingrese su prompt aquí...">
+        <button type="submit">Enviar</button>
+      </form>
+      <div id="output-container">
+        <p id="output"></p>
+      </div>
+    </div>
+  </body>
+</html>
