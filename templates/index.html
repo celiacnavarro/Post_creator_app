@@ -1,11 +1,11 @@
 {% extends './layout.html' %}
 
-{% block title %} {{ data.titulo }} {% endblock %}
+{% block title %} "Realiza tu consulta" {% endblock %}
 
 {% block body %}
 <div class="container">
     <h1>¡Realiza tu pregunta!</h1>
-    <form action="/procesar.php" method="POST">
+    <form action="/" method="POST">
       <label for="input">Consulta:</label>
       <input type="text" id="input" name="input" placeholder="Ingrese su prompt aquí...">
       <button type="submit">Enviar</button>

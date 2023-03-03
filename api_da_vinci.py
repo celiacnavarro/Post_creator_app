@@ -22,9 +22,9 @@ def index():
         # Enviar la entrada del usuario a OpenAI API
         response = openai.Completion.create(
             prompt=user_input,
-            engine="davinci",
-            max_tokens=1500,
-            temperature=0.7,
+            model="text-davinci-003",
+            max_tokens=1000,
+            temperature=0.8,
         )
         output = response.choices[0].text
         
